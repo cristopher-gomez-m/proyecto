@@ -30,12 +30,92 @@ namespace proyecto
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nombreUsuario = new System.Windows.Forms.TextBox();
+            this.botonPrestamo = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Banco Pichincha";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(159, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ingrese su nombre:";
+            // 
+            // nombreUsuario
+            // 
+            this.nombreUsuario.Location = new System.Drawing.Point(262, 140);
+            this.nombreUsuario.Name = "nombreUsuario";
+            this.nombreUsuario.Size = new System.Drawing.Size(163, 20);
+            this.nombreUsuario.TabIndex = 2;
+            this.nombreUsuario.TextChanged += new System.EventHandler(this.nombreUsuario_TextChanged);
+            // 
+            // botonPrestamo
+            // 
+            this.botonPrestamo.Location = new System.Drawing.Point(339, 228);
+            this.botonPrestamo.Name = "botonPrestamo";
+            this.botonPrestamo.Size = new System.Drawing.Size(86, 36);
+            this.botonPrestamo.TabIndex = 3;
+            this.botonPrestamo.Text = "Solicitar prestamo";
+            this.botonPrestamo.UseVisualStyleBackColor = true;
+            this.botonPrestamo.Click += new System.EventHandler(this.botonPrestamo_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(701, 345);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Salir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.botonPrestamo);
+            this.Controls.Add(this.nombreUsuario);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox nombreUsuario;
+        private System.Windows.Forms.Button botonPrestamo;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
