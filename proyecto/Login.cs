@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace proyecto
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -25,13 +25,12 @@ namespace proyecto
 
         private void botonPrestamo_Click(object sender, EventArgs e)
         {
-
+            using (Prestamo formPrestamo = new Prestamo())
+                formPrestamo.ShowDialog();
+            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            botonPrestamo.Enabled = false;
-        }
+    
 
         private void validarTexto()
         {
@@ -59,6 +58,11 @@ namespace proyecto
         private void nombreUsuario_TextChanged(object sender, EventArgs e)
         {
             validarTexto();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            botonPrestamo.Enabled = false;
         }
     }
 }
