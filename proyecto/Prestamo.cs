@@ -5,10 +5,10 @@ namespace proyecto
 {
     public partial class Prestamo : Form
     {
-        string nombreCliente;
-        int[] cuotasDisponiblesList = { 1, 2, 3, 4, 5 };
-
-        public Prestamo(string nombreCliente)
+        private string nombreCliente;
+        private int[] cuotasDisponiblesList = { 1, 2, 3, 4, 5 };
+        
+    public Prestamo(string nombreCliente)
         {
             this.nombreCliente = nombreCliente;
             InitializeComponent();
@@ -75,7 +75,7 @@ namespace proyecto
             Console.WriteLine("Cuota: " + cuota);
             Console.WriteLine("prestamo: " + prestamo);
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            string mensaje = anualidad.calculoAnualidad();
+            string mensaje = anualidad.getAnualidad();
             MessageBox.Show(mensaje,"Calculo de anualidad",buttons);
         }
     }

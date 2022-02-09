@@ -16,7 +16,7 @@ namespace proyecto
             this.monto = monto;
         }
 
-        public string calculoAnualidad()
+        public string getAnualidad()
         {
             anualidad = Math.Round(calcularAnualidad());
             mensaje = "El valor a pagar por año es de:$"+anualidad;
