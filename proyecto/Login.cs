@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+
 
 namespace proyecto
 {
@@ -49,7 +42,6 @@ namespace proyecto
                 }
                 else if (ok)
                 {
-                    Console.WriteLine("LLegue ");
                     errorProvider1.SetError(nombreUsuario, "");
                     botonPrestamo.Enabled = true;
 

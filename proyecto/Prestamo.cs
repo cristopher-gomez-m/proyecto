@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace proyecto
@@ -26,6 +19,7 @@ namespace proyecto
             llenarCuotas();
             saludo.Text += ", ";
             saludo.Text += nombreCliente;
+            botonPedirPrestamo.Enabled = false;
         }
 
         private void llenarCuotas()
@@ -50,6 +44,7 @@ namespace proyecto
                 Boolean ok = validator.validarNumero(number);
                 if (!ok)
                 {
+                    botonPedirPrestamo.Enabled = false;
                     errorProvider1.SetError(valor, "Solo se acepta numeros");
                 }
                 else if (ok)
@@ -74,7 +69,14 @@ namespace proyecto
 
         private void botonPedirPrestamo_Click(object sender, EventArgs e)
         {
-
+            double cuota = double.Parse(cuotas.SelectedItem.ToString());
+            double prestamo = double.Parse(valor.Text.Trim());
+            Anualidad anualidad = new Anualidad(cuota, prestamo);
+            Console.WriteLine("Cuota: " + cuota);
+            Console.WriteLine("prestamo: " + prestamo);
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            string mensaje = anualidad.calculoAnualidad();
+            MessageBox.Show(mensaje,"Calculo de anualidad",buttons);
         }
     }
 }
