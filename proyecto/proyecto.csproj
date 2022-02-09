@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="Prestamo.resx">
       <DependentUpon>Prestamo.cs</DependentUpon>
     </EmbeddedResource>

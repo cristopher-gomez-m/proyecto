@@ -25,39 +25,40 @@ namespace proyecto
 
         private void botonPrestamo_Click(object sender, EventArgs e)
         {
-            using (Prestamo formPrestamo = new Prestamo())
+            using (Prestamo formPrestamo = new Prestamo(nombreUsuario.Text))
                 formPrestamo.ShowDialog();
             
         }
 
-    
 
-        private void validarTexto()
+        private void validateForm()
         {
-            Regex name = new Regex(@"[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$");
+            Validator validator = new Validator();
             String nombre = nombreUsuario.Text.Trim();
-            Boolean ok = name.IsMatch(nombre); 
-            Console.WriteLine("Valgo: " + nombre);
-            if(nombre == string.Empty)
+            if (nombre == string.Empty)
             {
                 botonPrestamo.Enabled = false;
                 errorProvider1.SetError(nombreUsuario, "Debe introducir un nombre");
             }
-            else if (!ok)
+            else
             {
-                errorProvider1.SetError(nombreUsuario, "Solo se acepta letras y espacios en blanco");
-            }
-            else if(ok)
-            {
-                Console.WriteLine("LLegue ");
-                errorProvider1.SetError(nombreUsuario,"");
-                botonPrestamo.Enabled = true;
+                Boolean ok = validator.validarTexto(nombre);
+                if (!ok)
+                {
+                    errorProvider1.SetError(nombreUsuario, "Solo se acepta letras y espacios en blanco");
+                }
+                else if (ok)
+                {
+                    Console.WriteLine("LLegue ");
+                    errorProvider1.SetError(nombreUsuario, "");
+                    botonPrestamo.Enabled = true;
+
+                }
             }
         }
-
         private void nombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            validarTexto();
+            validateForm();
         }
 
         private void Login_Load(object sender, EventArgs e)
