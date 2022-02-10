@@ -31,12 +31,12 @@ namespace proyecto
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cuotas = new System.Windows.Forms.ComboBox();
             this.botonPedirPrestamo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.valor = new System.Windows.Forms.TextBox();
             this.P = new System.Windows.Forms.Label();
             this.saludo = new System.Windows.Forms.Label();
-            this.cuotas = new System.Windows.Forms.ComboBox();
             this.volver = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -45,40 +45,53 @@ namespace proyecto
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel1.Controls.Add(this.cuotas);
             this.panel1.Controls.Add(this.botonPedirPrestamo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.valor);
             this.panel1.Controls.Add(this.P);
-            this.panel1.Location = new System.Drawing.Point(73, 120);
+            this.panel1.Location = new System.Drawing.Point(65, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 185);
+            this.panel1.Size = new System.Drawing.Size(340, 197);
             this.panel1.TabIndex = 0;
+            // 
+            // cuotas
+            // 
+            this.cuotas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cuotas.FormattingEnabled = true;
+            this.cuotas.Location = new System.Drawing.Point(189, 88);
+            this.cuotas.Name = "cuotas";
+            this.cuotas.Size = new System.Drawing.Size(121, 21);
+            this.cuotas.TabIndex = 4;
             // 
             // botonPedirPrestamo
             // 
-            this.botonPedirPrestamo.Location = new System.Drawing.Point(107, 134);
+            this.botonPedirPrestamo.BackColor = System.Drawing.SystemColors.Window;
+            this.botonPedirPrestamo.Location = new System.Drawing.Point(226, 125);
             this.botonPedirPrestamo.Name = "botonPedirPrestamo";
             this.botonPedirPrestamo.Size = new System.Drawing.Size(91, 48);
             this.botonPedirPrestamo.TabIndex = 3;
-            this.botonPedirPrestamo.Text = "realizar prestamo";
+            this.botonPedirPrestamo.Text = "Realizar prestamo";
             this.botonPedirPrestamo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.botonPedirPrestamo.UseVisualStyleBackColor = true;
+            this.botonPedirPrestamo.UseVisualStyleBackColor = false;
             this.botonPedirPrestamo.Click += new System.EventHandler(this.botonPedirPrestamo_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 88);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.label2.Location = new System.Drawing.Point(13, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 13);
+            this.label2.Size = new System.Drawing.Size(180, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Numero de periodos anuales: ";
+            this.label2.Text = "Número de periodos anuales: ";
+            
             // 
             // valor
             // 
-            this.valor.Location = new System.Drawing.Point(174, 44);
+            this.valor.BackColor = System.Drawing.SystemColors.Window;
+            this.valor.Location = new System.Drawing.Point(188, 44);
             this.valor.Name = "valor";
             this.valor.Size = new System.Drawing.Size(100, 20);
             this.valor.TabIndex = 1;
@@ -87,37 +100,30 @@ namespace proyecto
             // P
             // 
             this.P.AutoSize = true;
-            this.P.Location = new System.Drawing.Point(20, 44);
+            this.P.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P.Location = new System.Drawing.Point(14, 44);
             this.P.Name = "P";
-            this.P.Size = new System.Drawing.Size(81, 13);
+            this.P.Size = new System.Drawing.Size(102, 16);
             this.P.TabIndex = 0;
             this.P.Text = "Valor a prestar: ";
             // 
             // saludo
             // 
             this.saludo.AutoSize = true;
-            this.saludo.Location = new System.Drawing.Point(115, 36);
+            this.saludo.Font = new System.Drawing.Font("Tahoma", 10.5F);
+            this.saludo.Location = new System.Drawing.Point(35, 32);
             this.saludo.Name = "saludo";
-            this.saludo.Size = new System.Drawing.Size(60, 13);
+            this.saludo.Size = new System.Drawing.Size(86, 17);
             this.saludo.TabIndex = 1;
-            this.saludo.Text = "Bienvenido";
-            // 
-            // cuotas
-            // 
-            this.cuotas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cuotas.FormattingEnabled = true;
-            this.cuotas.Location = new System.Drawing.Point(174, 88);
-            this.cuotas.Name = "cuotas";
-            this.cuotas.Size = new System.Drawing.Size(121, 21);
-            this.cuotas.TabIndex = 4;
+            this.saludo.Text = "BIENVENIDO";
             // 
             // volver
             // 
-            this.volver.Location = new System.Drawing.Point(693, 341);
+            this.volver.Location = new System.Drawing.Point(389, 319);
             this.volver.Name = "volver";
             this.volver.Size = new System.Drawing.Size(75, 23);
             this.volver.TabIndex = 2;
-            this.volver.Text = "volver";
+            this.volver.Text = "Volver";
             this.volver.UseVisualStyleBackColor = true;
             this.volver.Click += new System.EventHandler(this.volver_Click);
             // 
@@ -129,7 +135,8 @@ namespace proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(527, 386);
             this.Controls.Add(this.volver);
             this.Controls.Add(this.saludo);
             this.Controls.Add(this.panel1);
