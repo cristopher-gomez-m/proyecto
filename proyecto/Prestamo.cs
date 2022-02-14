@@ -34,10 +34,10 @@ namespace proyecto
         {
             Validator validator = new Validator();
             String number = valor.Text.Trim();
-            if (number == string.Empty)
+            if (number == string.Empty || cuotas.Text.Trim() == string.Empty)
             {
                 botonPedirPrestamo.Enabled = false;
-                errorProvider1.SetError(valor, "Debe introducir un monto");
+                errorProvider1.SetError(valor, "Debe introducir un monto y elejir el numero de cuotas");
             }
             else
             {
@@ -72,11 +72,14 @@ namespace proyecto
             double cuota = double.Parse(cuotas.SelectedItem.ToString());
             double prestamo = double.Parse(valor.Text.Trim());
             Anualidad anualidad = new Anualidad(cuota, prestamo);
-            Console.WriteLine("Cuota: " + cuota);
-            Console.WriteLine("prestamo: " + prestamo);
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             string mensaje = anualidad.getAnualidad();
             MessageBox.Show(mensaje,"Calculo de anualidad",buttons);
+        }
+
+        private void cuotas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validateForm();
         }
     }
 }

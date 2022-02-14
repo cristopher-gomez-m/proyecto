@@ -64,6 +64,7 @@ namespace proyecto
             this.cuotas.Name = "cuotas";
             this.cuotas.Size = new System.Drawing.Size(121, 21);
             this.cuotas.TabIndex = 4;
+            this.cuotas.SelectedIndexChanged += new System.EventHandler(this.cuotas_SelectedIndexChanged);
             // 
             // botonPedirPrestamo
             // 
@@ -83,10 +84,9 @@ namespace proyecto
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.label2.Location = new System.Drawing.Point(13, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 16);
+            this.label2.Size = new System.Drawing.Size(181, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Número de periodos anuales: ";
-            
             // 
             // valor
             // 
@@ -103,7 +103,7 @@ namespace proyecto
             this.P.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.P.Location = new System.Drawing.Point(14, 44);
             this.P.Name = "P";
-            this.P.Size = new System.Drawing.Size(102, 16);
+            this.P.Size = new System.Drawing.Size(103, 16);
             this.P.TabIndex = 0;
             this.P.Text = "Valor a prestar: ";
             // 
